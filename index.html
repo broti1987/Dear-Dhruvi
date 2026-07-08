@@ -337,6 +337,7 @@
   var iconOn = document.getElementById('bg-audio-icon-on');
   var iconOff = document.getElementById('bg-audio-icon-off');
   audio.volume = 0.6;
+  audio.muted = true; // start muted on first load
 
   function refresh() {
     var muted = audio.muted;
@@ -346,7 +347,7 @@
     btn.title = muted ? 'Unmute' : 'Mute';
   }
 
-  var userMuted = false; // true only if the user pressed the mute button
+  var userMuted = true; // starts muted; flips when the user presses the button
 
   function tryPlay() { audio.play().catch(function () {}); }
 
